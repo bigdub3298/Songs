@@ -21,13 +21,16 @@ export class SongList extends Component {
     });
   }
 
+  componentDidMount() {
+    this.props.selectSong(this.props.songs[0]);
+  }
+
   render() {
     return <div className="ui divided list">{this.renderList()}</div>;
   }
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return { songs: state.songs };
 };
 
